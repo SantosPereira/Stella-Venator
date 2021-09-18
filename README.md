@@ -1,24 +1,2 @@
-# stella-venator
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Stella-Venator
+ Um software para auxíliar a montagem de telescópios. Realiza os cálculos de distância entre lentes, gera especificações, e trás dicas úteis.
