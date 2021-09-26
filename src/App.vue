@@ -22,8 +22,9 @@ export default {
 </script>
 
 <style>
+
 body {
-  background-color: #000000;
+  background-color: #09020c;
 }
 
 #app {
@@ -39,11 +40,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-}
-
-h1 {
-  font-size: 300%;
-  color: rgb(19, 165, 80);
 }
 
 </style>
