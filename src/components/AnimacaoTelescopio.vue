@@ -1,5 +1,6 @@
 <template>
     <div id="canva">
+        <div id="ocular"></div>
         <div id="tubo"></div>
         <div id="parasol"></div>
     </div>
@@ -26,6 +27,21 @@ export default {
         display: flex;
     }
 
+    #ocular {
+        width: 30px;
+        height: 20px;
+
+        background-color: aliceblue;
+
+        border: solid 1px transparent;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin-left: 90px;
+        margin-top: 170px;
+    }
 
     #tubo {
         width: 300px;
@@ -37,9 +53,9 @@ export default {
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
 
-        border-top-left-radius: 40%;
-        border-bottom-left-radius: 40%;
-        margin-left: 110px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin-left: 2px;
         margin-top: 160px;
     }
 
