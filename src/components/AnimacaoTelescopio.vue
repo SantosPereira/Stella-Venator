@@ -34,13 +34,13 @@ export default {
         background-color: aliceblue;
 
         border: solid 1px transparent;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
 
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
         margin-left: 90px;
-        margin-top: 170px;
+        margin-top: 175px;
     }
 
     #tubo {
@@ -55,7 +55,7 @@ export default {
 
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        margin-left: 2px;
+        margin-left: 1px;
         margin-top: 160px;
     }
 
