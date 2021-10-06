@@ -5,6 +5,7 @@
     <ParametrosDoTele/>
   </div>
   <CorpoDoSite/>
+  <Rodape></Rodape>
 </template>
 
 <script>
@@ -12,6 +13,7 @@ import AnimacaoTelescopio from './components/AnimacaoTelescopio.vue'
 import Cabecalho from './components/Cabecalho.vue'
 import ParametrosDoTele from './components/ParametrosDoTele.vue'
 import CorpoDoSite from './components/CorpoDoSite.vue'
+import Rodape from './components/Rodape.vue'
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     Cabecalho,
     AnimacaoTelescopio,
     ParametrosDoTele,
-    CorpoDoSite
+    CorpoDoSite,
+    Rodape
   }
 }
 </script>
