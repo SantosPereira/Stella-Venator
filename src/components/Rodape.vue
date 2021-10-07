@@ -1,14 +1,21 @@
 <template>
   <footer>
       <div id="f-left">
-          <p>Se esse material inspirou você de alguma forma, não deixe de me mandar</p>
-          <p>uma mensagem para que eu saiba que estou fazendo um bom trabalho :)</p>
+          <span>
+              <p>Se esse material inspirou você de alguma forma, não deixe de me mandar</p>
+              <p>uma mensagem, para que eu saiba que estou fazendo um bom trabalho :)</p>
+            </span>
+            <div class="lista-horinzontal"> 
+                <a href="https://www.instagram.com/pedro.hsp0/" target="_blank"><img src="../../public/static/icons/instagram_preto.png" width="20" height="20"></a>
+                <a href="https://github.com/SantosPereira" target="_blank"><img src="../../public/static/icons/github_preto.png" width="20" height="20"></a>
+                <a href="https://www.linkedin.com/in/santos-pereira/" target="_blank"><img src="../../public/static/icons/linkedin_preto.png" width="20" height="20"></a>
+            </div>
       </div>
       <div id="f-right">
         <h3>Ajude a manter este projeto</h3>
 
         <p id="pix">Pix</p>
-        <img src="../../public/pix-qr-code.png" width="150" height="150">
+        <img src="../../public/static/pix-5.png" width="150" height="150">
         <p>Chave: a949f1db-17b2-42fe-b5f7-8b09f88dad4f</p>
       </div>
   </footer>
@@ -31,7 +38,7 @@ export default {
     }
 
     #f-left {
-        font-size: 0.8em;
+        font-size: 0.85em;
          display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -47,7 +54,8 @@ export default {
         align-items: center;
         justify-content: center;
 
-        margin-left: 30%;
+        margin-left: 15%;
+        margin-right: 5%;
     }
 
     #pix {
@@ -60,8 +68,10 @@ export default {
         border-radius: 5px;
     }
 
-    /* #f-left p {
-        text-align: justify;
+    .lista-horinzontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
-    }  */
 </style>
