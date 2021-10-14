@@ -6,9 +6,9 @@
               <p>uma mensagem, para que eu saiba que estou fazendo um bom trabalho :)</p>
             </span>
             <div class="lista-horinzontal"> 
-                <a href="https://www.instagram.com/pedro.hsp0/" target="_blank"><img src="../../public/static/icons/instagram_preto.png" width="20" height="20"></a>
-                <a href="https://github.com/SantosPereira" target="_blank"><img src="../../public/static/icons/github_preto.png" width="20" height="20"></a>
-                <a href="https://www.linkedin.com/in/santos-pereira/" target="_blank"><img src="../../public/static/icons/linkedin_preto.png" width="20" height="20"></a>
+                <a href="https://www.instagram.com/pedro.hsp0/" target="_blank"><img src="../../public/static/icons/instagram_preto.png" width="25" height="25"></a>
+                <a href="https://github.com/SantosPereira" target="_blank"><img src="../../public/static/icons/github_preto.png" width="25" height="25"></a>
+                <a href="https://www.linkedin.com/in/santos-pereira/" target="_blank"><img src="../../public/static/icons/linkedin_preto.png" width="25" height="25"></a>
             </div>
       </div>
       <div id="f-right">
@@ -19,7 +19,7 @@
         <p>Chave: a949f1db-17b2-42fe-b5f7-8b09f88dad4f</p>
       </div>
   </footer>
-<p>Desenvolvido com ❤ em Pernambuco</p>
+<p id="fim">Desenvolvido com ❤ em Pernambuco</p>
 </template>
 
 <script>
@@ -38,12 +38,13 @@ export default {
     }
 
     #f-left {
-        font-size: 0.85em;
+        font-size: 1em;
          display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         align-items: left;
         justify-content: center;
+
 
     }
 
@@ -54,8 +55,8 @@ export default {
         align-items: center;
         justify-content: center;
 
-        margin-left: 15%;
-        margin-right: 5%;
+        margin-left: 12%;
+        margin-right: 8%;
     }
 
     #pix {
@@ -74,4 +75,7 @@ export default {
         justify-content: space-evenly;
     }
 
+    #fim {
+        margin-top: 50px;
+    }
 </style>

@@ -1,4 +1,8 @@
 <template>
+    <div>
+
+    </div>
+
   <section>
       <h2>Stella... o que??</h2>
       <p>Stella Venator, do latim, caçador de estrelas,
@@ -22,7 +26,7 @@ export default {
 
     section {
         margin-top: 120px;
-        height: 600px;
+        height: 550px;
         background-color: black;
         color: aliceblue;
         padding: 30px;
