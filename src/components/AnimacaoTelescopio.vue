@@ -1,79 +1,135 @@
 <template>
-    <div id="canva">
-        <div id="ocular"></div>
-        <div id="tubo"></div>
-        <div id="parasol"></div>
-    </div>
+  <div id="canva">
+    <div id="ocular" class="itens-internos" @mouseover="animation"></div>
+    <div id="tubo" class="itens-internos" v-bind:style="tubo" @mouseover="animation"></div>
+    <div id="parasol" class="itens-internos" @mouseover="animation"></div>
+    <!-- <div id="escala"></div> -->
+  </div>
+  <h1>{{ disFocObj }}</h1>
 </template>
 
 <script>
 export default {
-    name:'AnimacaoTelescopio'
-}
+  name: "AnimacaoTelescopio",
+  props: {
+    disFocObj: {
+      type: Number,
+      required: false,
+    },
+  },
+  data: function() {
+    return{
+      // CSS
+      tubo: {
+        width: String(this.disFocObj)+'px'
+      }
+    }
+  },
+  methods: {
+    animation: function() {
+      console.log('Aqui vai ter a lógica de uma animação massa')
+    }
+  }
+
+};
 </script>
 
 <style scoped>
-    #canva {
-        width: 600px;
-        height: 400px;
-        margin: 20px;
-        margin-left: 70px;
+h1 {
+  font-size: 2rem;
+}
 
-        background-color: rgb(28, 28, 28);
+#canva {
+  width: 660px;
+  height: 400px;
 
-        border: solid 1px transparent;
-        border-radius: 10px;
+  margin: 2%;
+  margin-left: 5%;
 
-        display: flex;
-    }
+  background-color: rgb(28, 28, 28);
 
-    #ocular {
-        width: 30px;
-        height: 20px;
+  border: solid 1px transparent;
+  border-radius: 10px;
 
-        background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+#ocular {
+  width: 30px;
+  height: 20px;
 
-        border: solid 1px transparent;
-        border-top-right-radius: 2px;
-        border-bottom-right-radius: 2px;
+  margin-left: 120px;
+  margin-top: 175px;
 
-        border-top-left-radius: 2px;
-        border-bottom-left-radius: 2px;
-        margin-left: 90px;
-        margin-top: 175px;
-    }
+  background-color: aliceblue;
 
-    #tubo {
-        width: 300px;
-        height: 50px;
+  border: solid 1px transparent;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 
-        background-color: aliceblue;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+#tubo {
+  width: 300px;
+  height: 50px;
 
-        border: solid 1px transparent;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+  margin-left: 1px;
+  margin-top: 160px;
 
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        margin-left: 1px;
-        margin-top: 160px;
-    }
+  background-color: aliceblue;
 
-    #parasol {
-        width: 70px;
-        height: 60px;
+  border: solid 1px transparent;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 
-        background-color: aliceblue;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#parasol {
+  width: 70px;
+  height: 60px;
 
-        border: solid 1px transparent;
-        border-radius: 4px;
-        /* border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+  margin-left: 2px;
+  margin-top: 155px;
+  margin-right: 90px;
 
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%; */
-        margin-left: 2px;
-        margin-top: 155px;
-    }
+  background-color: aliceblue;
 
+  border: solid 1px transparent;
+  border-radius: 4px;
+}
+.itens-internos {
+  transform: scale(1);
+  transition: 0.6s;
+}
+.itens-internos:hover {
+  background-color: aquamarine !important;
+  transform: scale(1.2);
+  transition: 0.6s;
+  z-index: 10;
+  animation: destaque 1s;
+  /* transform: translateY(-30px);
+  transition: 1.3s; */
+
+}
+/* .itens-internos:not(:hover){
+  transform: scale(2);
+} */
+
+
+@keyframes destaque {
+  from {}
+  to {
+    transform: translate3d(100px, 100px, 150px);
+  }
+}
+
+@media (max-width: 440px) {
+  #canva {
+    margin-left: -4rem;
+    transform: scale(0.7);
+  }
+}
 </style>

@@ -16,17 +16,32 @@
 
     <div class="capsula">
       <label>Diâmetro da lente Objetiva</label>
-      <input type="text" placeholder="70mm" id="this.diam" v-model="this.diam" />
+      <input
+        type="text"
+        placeholder="70mm"
+        id="this.diam"
+        v-model="this.diam"
+      />
     </div>
 
     <div class="capsula">
       <label>Distância focal da Objetiva</label>
-      <input type="text" placeholder="500mm" id="this.disFocObj" v-model="this.disFocObj" />
+      <input
+        type="text"
+        placeholder="500mm"
+        id="this.disFocObj"
+        v-model="this.disFocObj"
+      />
     </div>
 
     <div class="capsula">
       <label>Distância focal da lente Ocular</label>
-      <input type="text" placeholder="16mm" id="this.disFocOcu" v-model="this.disFocOcu"/>
+      <input
+        type="text"
+        placeholder="16mm"
+        id="this.disFocOcu"
+        v-model="this.disFocOcu"
+      />
     </div>
 
     <button type="button" v-on:click="retornaDados">Calcular</button>
@@ -35,44 +50,50 @@
   <div id="ficha" v-if="visivel">
     <div>
       <h1>Ficha técnica do conjunto óptico</h1>
-      <p>Razão focal: F/{{F.toFixed(2)}}</p>
-      <p>Ampliação: {{amp.toFixed(2)}}</p>
-      <p>Ampliação máxima: {{ampMax.toFixed(2)}}</p>
+      <p>Razão focal: F/{{ F.toFixed(2) }}</p>
+      <p>Ampliação: {{ amp.toFixed(2) }}</p>
+      <p>Ampliação máxima: {{ ampMax.toFixed(2) }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'ParametrosDoTele',
-    data: function() {
+  name: "ParametrosDoTele",
+  data: function () {
     return {
-      diam: '',
-      disFocObj: '',
-      disFocOcu: '',
-      F: '',
-      amp: '',
-      ampMax: '',
-      visivel: false
-    }
+      diam: "",
+      disFocObj: "300",
+      disFocOcu: "",
+      F: "",
+      amp: "",
+      ampMax: "",
+      visivel: false,
+    };
+  },
+  emits: ["vai"],
+  methods: {
+    retornaDados: function () {
+      this.diam = parseInt(
+        String(this.diam).toLowerCase().replace("mm", "").trim()
+      );
+      this.disFocObj = parseInt(
+        String(this.disFocObj).toLowerCase().replace("mm", "").trim()
+      );
+      this.disFocOcu = parseInt(
+        String(this.disFocOcu).toLowerCase().replace("mm", "").trim()
+      );
+
+      this.F = (this.disFocObj + this.disFocOcu) / this.diam;
+      this.amp = this.disFocObj / this.disFocOcu;
+      this.ampMax = 60 * (this.diam / 25.4); // this.diam/25.4 é a converção para polegada
+
+      this.visivel = !this.visivel;
+      console.log("Funcionou");
+      this.$emit("vai", this.disFocObj);
     },
-    methods: {
-        retornaDados: function () {
-            this.diam = parseInt(String(this.diam).toLowerCase().replace('mm','').trim())
-            this.disFocObj = parseInt(String(this.disFocObj).toLowerCase().replace('mm','').trim())
-            this.disFocOcu = parseInt(String(this.disFocOcu).toLowerCase().replace('mm','').trim())
-
-            this.F = ((this.disFocObj+this.disFocOcu)/this.diam)
-            this.amp = (this.disFocObj/this.disFocOcu)
-            this.ampMax = (60*(this.diam/25.4)) // this.diam/25.4 é a converção para polegada
-
-            this.visivel = true
-        }
-    }
-}
-
-
-
+  },
+};
 </script>
 
 <style scoped>
@@ -97,13 +118,13 @@ form {
 }
 
 input {
-    width: 400px;
-    height: 50px;
-    font-size: 2em;
+  width: 400px;
+  height: 50px;
+  font-size: 2em;
 
-    border-radius: 10px;
-    border-style:solid;
-    border-color: rgb(39, 177, 99);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgb(39, 177, 99);
 }
 
 #ficha {
@@ -119,5 +140,4 @@ input {
   color: aliceblue;
   height: 350px;
 }
-
 </style>
