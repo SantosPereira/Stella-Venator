@@ -5,7 +5,6 @@
     <div id="parasol" class="itens-internos" @mouseover="animation"></div>
     <!-- <div id="escala"></div> -->
   </div>
-  <h1>{{ disFocObj }}</h1>
 </template>
 
 <script>
@@ -35,10 +34,6 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 2rem;
-}
-
 #canva {
   width: 660px;
   height: 400px;
@@ -109,20 +104,21 @@ h1 {
   transform: scale(1.2);
   transition: 0.6s;
   z-index: 10;
-  animation: destaque 1s;
-  /* transform: translateY(-30px);
-  transition: 1.3s; */
+  animation: destaque 2s;
+
 
 }
-/* .itens-internos:not(:hover){
-  transform: scale(2);
-} */
-
 
 @keyframes destaque {
-  from {}
-  to {
-    transform: translate3d(100px, 100px, 150px);
+  0% {}
+  30% {
+    transform: skewY(2deg);
+  }
+  70% {
+    transform: translate3d(0px, -100px, 10px);
+  }
+  100% {
+    transform: scale(1.4);
   }
 }
 

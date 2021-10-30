@@ -3,6 +3,7 @@
   <div id="secao-principal">
     <AnimacaoTelescopio :disFocObj="disFocObj" />
     <ParametrosDoTele @vai="pegaParam" />
+    <!-- <FichaTecnica :dados="dados_form" v-if="dados_form['fichaVisivel']"></FichaTecnica> -->
   </div>
   <ObjetosObservaveis />
   <CorpoDoSite />
@@ -16,6 +17,7 @@ import ParametrosDoTele from "./components/ParametrosDoTele.vue";
 import CorpoDoSite from "./components/CorpoDoSite.vue";
 import Rodape from "./components/Rodape.vue";
 import ObjetosObservaveis from "./components/ObjetosObservaveis.vue";
+// import FichaTecnica from "./components/FichaTecnica.vue"
 
 export default {
   name: "App",
@@ -26,16 +28,17 @@ export default {
     ObjetosObservaveis,
     CorpoDoSite,
     Rodape,
+    // FichaTecnica,
   },
   data: function() {
     return {
-      dados_form: ParametrosDoTele.data(),
-      disFocObj: ''
+      dados_form: {}
     };
   },
   methods: {
     pegaParam: function(info) {
-      this.disFocObj = info
+      this.dados_form = info
+      this.disFocObj = info['distanciaFocalObjetiva']
       console.log(info);
     },
   },

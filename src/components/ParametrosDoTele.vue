@@ -44,17 +44,9 @@
       />
     </div>
 
-    <button type="button" v-on:click="retornaDados">Calcular</button>
+    <div id="botao" type="button" v-on:click="retornaDados">Calcular</div>
+    <!-- <button id="bota" type= "button" v-on:click="retornaDados">Calcular</button> -->
   </form>
-
-  <div id="ficha" v-if="visivel">
-    <div>
-      <h1>Ficha técnica do conjunto óptico</h1>
-      <p>Razão focal: F/{{ F.toFixed(2) }}</p>
-      <p>Ampliação: {{ amp.toFixed(2) }}</p>
-      <p>Ampliação máxima: {{ ampMax.toFixed(2) }}</p>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -63,7 +55,7 @@ export default {
   data: function () {
     return {
       diam: "",
-      disFocObj: "300",
+      disFocObj: "",
       disFocOcu: "",
       F: "",
       amp: "",
@@ -89,8 +81,20 @@ export default {
       this.ampMax = 60 * (this.diam / 25.4); // this.diam/25.4 é a converção para polegada
 
       this.visivel = !this.visivel;
-      console.log("Funcionou");
-      this.$emit("vai", this.disFocObj);
+
+      this.dados = {
+        diametroObjetiva: this.diam,
+        distanciaFocalObjetiva: this.disFocObj,
+        distanciaFocalOCular: this.disFocOcu,
+        razaoF: this.F,
+        ampliacao: this.amp,
+        ampliacaoMaxima: this.ampMax,
+
+        fichaVisivel: this.visivel,
+      };
+
+      // this.dados = [this.disFocObj]
+      this.$emit("vai", this.dados);
     },
   },
 };
@@ -127,17 +131,16 @@ input {
   border-color: rgb(39, 177, 99);
 }
 
-#ficha {
-  z-index: 1000;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  margin-left: 50%;
-  background-color: rgb(29, 29, 29);
+#botao {
+  background-color: rgb(39, 177, 99);
+  color: rgb(255, 255, 255);
+  padding: 4px;
   border: solid 1px transparent;
-  border-radius: 10px;
-  padding: 20px;
-  color: aliceblue;
-  height: 350px;
+  border-radius: 0;
+}
+#botao:hover {
+  filter:opacity(0.8);
+  filter: brightness(0.7);
+  transition: filter 3s;
 }
 </style>
