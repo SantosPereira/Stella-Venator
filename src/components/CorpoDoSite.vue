@@ -27,7 +27,7 @@ export default {
     section {
         margin-top: 120px;
         height: 550px;
-        background-color: black;
+        background-color: rgb(42, 42, 42);
         color: aliceblue;
         padding: 30px;
     }
@@ -40,5 +40,14 @@ export default {
     p {
         font-size: 1.5em;
     }
+    @media (max-width: 480px) {
+        h2 {
+            font-size: 3em;
+            color: aquamarine;
+        }
 
+        p {
+            font-size: 1.25em;
+        }
+    }
 </style>

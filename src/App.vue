@@ -73,7 +73,7 @@ body {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -85,8 +85,8 @@ body {
 
   #secao-principal {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 </style>

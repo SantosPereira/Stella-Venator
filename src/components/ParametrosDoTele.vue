@@ -7,7 +7,7 @@
         <option value="1">Objeto terrestres</option>
         <option value="2">Apenas a Lua</option>
         <option value="3">
-          Lua em alta resolução, aglomerados de estrelas, objetos de alto brilho
+          Lua em alta resolução, aglomerados de estrelas
         </option>
         <option value="4">Planetas do sistema solar</option>
         <option value="5">Nebulosas e galáxias</option>
@@ -121,8 +121,12 @@ form {
   margin-bottom: 30px;
 }
 
+/* select {
+  width: 25rem;
+} */
+
 input {
-  width: 400px;
+  /* width: 25rem; */
   height: 50px;
   font-size: 2em;
 
@@ -142,5 +146,11 @@ input {
   filter:opacity(0.8);
   filter: brightness(0.7);
   transition: filter 3s;
+}
+
+@media (max-width: 480px) {
+  /* select, input {
+    width: 20rem;
+  } */
 }
 </style>

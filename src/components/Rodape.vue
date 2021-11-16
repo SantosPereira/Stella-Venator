@@ -78,4 +78,11 @@ export default {
     #fim {
         margin-top: 50px;
     }
+
+    @media (max-width: 480px) {
+        footer {
+            margin-bottom: 1rem;
+            padding: 10px;
+        }
+    }
 </style>

@@ -42,7 +42,7 @@ p {
 @media (max-width: 440px) {
   .cabecalho {
     color: aliceblue;
-    background-color: rgb(12, 12, 12);
+    background-color: rgb(42, 42, 42);
     margin-top: -80px;
   }
   #titulo {

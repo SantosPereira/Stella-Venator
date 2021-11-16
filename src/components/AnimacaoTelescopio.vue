@@ -1,10 +1,12 @@
 <template>
-  <div id="canva">
-    <div id="ocular" class="itens-internos" @mouseover="animation"></div>
-    <div id="tubo" class="itens-internos" v-bind:style="tubo" @mouseover="animation"></div>
-    <div id="parasol" class="itens-internos" @mouseover="animation"></div>
-    <!-- <div id="escala"></div> -->
-  </div>
+  <section>
+    <div id="canva">
+      <div id="ocular" class="itens-internos" @mouseover="animation"></div>
+      <div id="tubo" class="itens-internos" v-bind:style="tubo" @mouseover="animation"></div>
+      <div id="parasol" class="itens-internos" @mouseover="animation"></div>
+      <!-- <div id="escala"></div> -->
+    </div>
+  </section>
 </template>
 
 <script>
@@ -34,14 +36,20 @@ export default {
 </script>
 
 <style scoped>
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  align-items: baseline;
+  justify-content: center;
+}
+
 #canva {
   width: 660px;
   height: 400px;
 
-  margin: 2%;
-  margin-left: 5%;
-
-  background-color: rgb(28, 28, 28);
+  background-color: rgb(42, 42, 42);
 
   border: solid 1px transparent;
   border-radius: 10px;
@@ -122,10 +130,15 @@ export default {
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
+  section {
+    align-items: baseline;
+    justify-content:flex-start;
+    transform: scale(0.545);
+  }
+
   #canva {
-    margin-left: -4rem;
-    transform: scale(0.7);
+    margin-left: -11rem;
   }
 }
 </style>
