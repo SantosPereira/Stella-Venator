@@ -150,7 +150,7 @@ input {
 
 @media (max-width: 480px) {
   select, input {
-    width: unset;
+    width: 20rem;
   }
 }
 </style>
