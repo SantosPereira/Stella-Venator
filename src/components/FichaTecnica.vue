@@ -1,11 +1,22 @@
 <template>
   <div id="ficha" v-if="dados['fichaVisivel']">
-    <div>
       <h1>Ficha técnica do conjunto óptico</h1>
-        <p>Razão focal: F/{{ dados["razaoF"].toFixed(2) }}</p>
-        <p>Ampliação: {{ dados["ampliacao"].toFixed(2) }}</p>
-        <p>Ampliação máxima: {{ dados["ampliacaoMaxima"].toFixed(2) }}</p>
-    </div>
+      <table>
+        <tbody>
+          <tr>
+            <td>Razão focal</td>
+            <td>F/{{ dados["razaoF"].toFixed(2) }}</td>
+          </tr>
+          <tr>
+            <td>Ampliação</td>
+            <td>{{ dados["ampliacao"].toFixed(2) }}</td>
+          </tr>
+          <tr>
+            <td>Ampliação máxima</td>
+            <td>{{ dados["ampliacaoMaxima"].toFixed(2) }}</td>
+          </tr>
+        </tbody>
+      </table>
   </div>
 </template>
 
@@ -14,30 +25,34 @@ export default {
   name: "FichaTecnica",
   props: {
     dados: {
-      type: JSON,
+      type: Object,
       required: true,
     },
   },
-  data: function() {
-      return{
-        // fichaVisivel: false
-      }
-  }
+  data: function () {
+    return {
+      // fichaVisivel: false
+    };
+  },
 };
 </script>
 
 <style scoped>
 #ficha {
-  z-index: 1000;
-  position: absolute;
   display: flex;
   flex-direction: column;
-  margin-left: 50%;
-  background-color: rgb(29, 29, 29);
+
+  text-align: center;
+  position: absolute;
+  
+  background-color: aliceblue;
+  color: rgb(46, 46, 46);
+  
   border: solid 1px transparent;
-  border-radius: 10px;
-  padding: 20px;
-  color: aliceblue;
-  height: 350px;
+  border-radius: 15px;
+  
+  padding: 0 2rem 0 2rem;
+  height: 22rem;
+  z-index: 10;
 }
 </style>

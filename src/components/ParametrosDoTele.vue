@@ -44,8 +44,8 @@
       />
     </div>
 
-    <div id="botao" type="button" v-on:click="retornaDados">Calcular</div>
-    <!-- <button id="bota" type= "button" v-on:click="retornaDados">Calcular</button> -->
+    <!-- <div id="botao" type="button" v-on:click="retornaDados">Calcular</div> -->
+    <button id="botao" type= "button" v-on:click="retornaDados">Calcular</button>
   </form>
 </template>
 
@@ -121,12 +121,12 @@ form {
   margin-bottom: 30px;
 }
 
-/* select {
+select {
   width: 25rem;
-} */
+}
 
 input {
-  /* width: 25rem; */
+  width: 25rem;
   height: 50px;
   font-size: 2em;
 
@@ -149,8 +149,8 @@ input {
 }
 
 @media (max-width: 480px) {
-  /* select, input {
-    width: 20rem;
-  } */
+  select, input {
+    width: unset;
+  }
 }
 </style>

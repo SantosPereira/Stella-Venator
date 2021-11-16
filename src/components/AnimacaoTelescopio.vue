@@ -138,7 +138,7 @@ section {
   }
 
   #canva {
-    margin-left: -11rem;
+    margin-left: 0;
   }
 }
 </style>

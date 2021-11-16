@@ -3,7 +3,7 @@
   <div id="secao-principal">
     <AnimacaoTelescopio :disFocObj="disFocObj" />
     <ParametrosDoTele @vai="pegaParam" />
-    <!-- <FichaTecnica :dados="dados_form" v-if="dados_form['fichaVisivel']"></FichaTecnica> -->
+    <FichaTecnica :dados="dados_form" v-if="dados_form['fichaVisivel']"></FichaTecnica>
   </div>
   <ObjetosObservaveis />
   <CorpoDoSite />
@@ -17,7 +17,7 @@ import ParametrosDoTele from "./components/ParametrosDoTele.vue";
 import CorpoDoSite from "./components/CorpoDoSite.vue";
 import Rodape from "./components/Rodape.vue";
 import ObjetosObservaveis from "./components/ObjetosObservaveis.vue";
-// import FichaTecnica from "./components/FichaTecnica.vue"
+import FichaTecnica from "./components/FichaTecnica.vue"
 
 export default {
   name: "App",
@@ -28,7 +28,7 @@ export default {
     ObjetosObservaveis,
     CorpoDoSite,
     Rodape,
-    // FichaTecnica,
+    FichaTecnica,
   },
   data: function() {
     return {
@@ -70,6 +70,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    
+    justify-content: center;
+    margin-left: -6rem;
   }
 }
 
@@ -87,6 +90,8 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    margin-left: 0;
   }
 }
 </style>
