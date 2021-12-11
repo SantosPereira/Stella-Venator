@@ -89,6 +89,7 @@ section {
 
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+
 }
 #parasol {
   width: 70px;
@@ -113,8 +114,12 @@ section {
   transition: 0.6s;
   z-index: 10;
   animation: destaque 2s;
+}
 
-
+/* Animação para o tubo principal */
+.itens-internos:hover + #ocular {
+  transform: translate3d(400px, 0, 0);
+  transition: transform 1s;
 }
 
 @keyframes destaque {

@@ -20,7 +20,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
 
 .cabecalho {
-  margin-top: 0px;
+  margin-top: -50px;
 }
 
 #titulo {
