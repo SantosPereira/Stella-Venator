@@ -28,6 +28,7 @@ export default {
   },
   methods: {
     animation: function() {
+      
       console.log('Aqui vai ter a lógica de uma animação massa')
     }
   }
@@ -36,15 +37,6 @@ export default {
 </script>
 
 <style scoped>
-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  align-items: baseline;
-  justify-content: center;
-}
-
 #canva {
   width: 660px;
   height: 400px;
@@ -57,13 +49,14 @@ section {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
 }
 #ocular {
   width: 30px;
   height: 20px;
-
-  margin-left: 120px;
-  margin-top: 175px;
 
   background-color: aliceblue;
 
@@ -77,9 +70,6 @@ section {
 #tubo {
   width: 300px;
   height: 50px;
-
-  margin-left: 1px;
-  margin-top: 160px;
 
   background-color: aliceblue;
 
@@ -95,10 +85,6 @@ section {
   width: 70px;
   height: 60px;
 
-  margin-left: 2px;
-  margin-top: 155px;
-  margin-right: 90px;
-
   background-color: aliceblue;
 
   border: solid 1px transparent;
@@ -106,34 +92,45 @@ section {
 }
 .itens-internos {
   transform: scale(1);
-  transition: 0.6s;
+  transition: 2s;
+  margin-right: 1px;
 }
 .itens-internos:hover {
   background-color: aquamarine !important;
-  transform: scale(1.2);
-  transition: 0.6s;
+  transform: scale(1.3);
+  transition: 1s;
   z-index: 10;
-  animation: destaque 2s;
 }
 
+/* .itens-internos:hover ~ .itens-internos {
+  transform: translateX(200px);
+} */
+
+
+#tubo:hover ~ #parasol {
+  transform: translateX(13rem);
+  transition: .8s;
+  visibility: hidden;
+}
+
+#ocular:hover ~ .itens-internos {
+  transform: translateX(35rem);
+  transition: .8s;
+  visibility: hidden;
+}
+
+#parasol:hover {
+  transform: translateX(2rem);
+  transition: .8s;
+}
+
+
 /* Animação para o tubo principal */
-.itens-internos:hover + #ocular {
+/* .itens-internos:hover + #ocular {
   transform: translate3d(400px, 0, 0);
   transition: transform 1s;
 }
-
-@keyframes destaque {
-  0% {}
-  30% {
-    transform: skewY(2deg);
-  }
-  70% {
-    transform: translate3d(0px, -100px, 10px);
-  }
-  100% {
-    transform: scale(1.4);
-  }
-}
+*/
 
 @media (max-width: 480px) {
   section {
