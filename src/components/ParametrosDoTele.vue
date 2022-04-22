@@ -18,7 +18,6 @@
       <label>Diâmetro da lente Objetiva</label>
       <input
         type="text"
-        placeholder="70mm"
         id="this.diam"
         v-model="this.diam"
       />
@@ -28,7 +27,6 @@
       <label>Distância focal da Objetiva</label>
       <input
         type="text"
-        placeholder="500mm"
         id="this.disFocObj"
         v-model="this.disFocObj"
       />
@@ -38,7 +36,6 @@
       <label>Distância focal da lente Ocular</label>
       <input
         type="text"
-        placeholder="16mm"
         id="this.disFocOcu"
         v-model="this.disFocOcu"
       />
@@ -108,8 +105,14 @@ form {
   justify-content: space-between;
 
   margin-top: 20px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   height: 350px;
+}
+
+@media screen {
+  form {
+    margin-left: 20px;
+  }
 }
 
 .capsula {
@@ -125,14 +128,20 @@ select {
   width: 25rem;
 }
 
+label {
+  /* color: rgb(39, 177, 99); */
+  font-size: 1em;
+}
+
 input {
   width: 25rem;
   height: 50px;
-  font-size: 2em;
+  font-size: 1.6em;
+  text-align: initial;
 
   border-radius: 10px;
   border-style: solid;
-  border-color: rgb(39, 177, 99);
+  border-color: rgba(188, 199, 193, 0.363);
 }
 
 #botao {

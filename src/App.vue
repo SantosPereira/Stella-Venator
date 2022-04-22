@@ -56,6 +56,26 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+@media (max-width: 480px) {
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #424242;
+    margin-top: 60px;
+  }
+
+  #secao-principal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    /* margin-left: 0; */
+    justify-content: center;
+  }
+}
+
 @media screen {
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -76,22 +96,5 @@ body {
   }
 }
 
-@media (max-width: 480px) {
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #424242;
-    margin-top: 60px;
-  }
 
-  #secao-principal {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    margin-left: 0;
-  }
-}
 </style>

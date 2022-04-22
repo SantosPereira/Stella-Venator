@@ -5,15 +5,15 @@
       <tbody>
         <tr>
           <td>Ampliação</td>
-          <td>{{ dados["ampliacao"].toFixed(0) }}x</td>
+          <td style="text-align: center">{{ dados["ampliacao"].toFixed(0) }}x</td>
         </tr>
         <tr>
           <td>Razão focal</td>
-          <td>F/{{ dados["razaoF"].toFixed(2) }}</td>
+          <td style="text-align: center">F/{{ dados["razaoF"].toFixed(2) }}</td>
         </tr>
         <tr>
           <td>Comprimento do tubo principal</td>
-          <td>{{ dados["distanciaFocalObjetiva"] / 10 }}cm</td>
+          <td style="text-align: center">{{ dados["distanciaFocalObjetiva"] / 10 }}cm</td>
         </tr>
         <!-- <tr>
           <td>Distância Focal Total</td>
@@ -22,7 +22,7 @@
         <tr>
           <td>Peso estimado</td>
           <!-- Calculado assim: distanciaFocalDaObjetiva * pesoEstimadoDoTubo * pesoEstimadoDaObjetiva -->
-          <td>
+          <td style="text-align: center">
             {{
               (
                 dados["distanciaFocalObjetiva"] * 1.3 +
@@ -36,10 +36,11 @@
         </tr>
         <tr>
           <td>Ampliação máxima</td>
-          <td>{{ dados["ampliacaoMaxima"].toFixed(0) }}x</td>
+          <td style="text-align: center">{{ dados["ampliacaoMaxima"].toFixed(0) }}x</td>
         </tr>
       </tbody>
     </table>
+    <a href="/">Como isso foi calculado?</a>
   </div>
 </template>
 
@@ -61,23 +62,76 @@ export default {
 </script>
 
 <style scoped>
-#ficha {
-  display: flex;
-  flex-direction: column;
 
-  text-align: left;
-  position: absolute;
+a {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: rgb(43, 133, 58);
+}
 
-  background-color: aliceblue;
-  color: rgb(46, 46, 46);
 
-  border: solid 1px transparent;
-  border-radius: 15px;
+@media (max-width: 480px) {
+  #ficha {
+    display: flex;
+    flex-direction: column;
 
-  padding: 0 2rem 0 2rem;
-  height: 22rem;
-  z-index: 10;
+    text-align: left;
+    position: fixed;
 
-  box-shadow: 5px 4px 3px rgba(11, 24, 14, 0.418);
+    background-color: rgb(255, 255, 255);
+    color: rgb(46, 46, 46);
+
+    border: solid 1px transparent;
+    border-radius: 15px;
+
+    padding: 0 2rem 0 2rem;
+    height: 22rem;
+    width: 70%;
+    z-index: 10;
+
+    box-shadow: 1px 8px 15px 0px rgba(0,0,0,0.35);
+  }
+
+  td {
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    padding: 5px;
+  }
+
+  a {
+    margin-left: 9.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen {
+  #ficha {
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+    position: fixed;
+
+    background-color: rgb(255, 255, 255);
+    color: rgb(46, 46, 46);
+
+    border: solid 1px transparent;
+    border-radius: 15px;
+
+    padding: 0 2rem 0 2rem;
+    height: 20rem;
+    z-index: 10;
+
+    box-shadow: 1px 8px 15px 0px rgba(0,0,0,0.35);
+  }
+
+  
+  td {
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    padding: 5px;
+  }
+  a {
+    margin-top: 2rem;
+    text-align: center;
+  }
 }
 </style>
