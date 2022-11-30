@@ -1,17 +1,22 @@
 <template>
   <div class="cabecalho">
     <div id="titulo">
-      <h1>{{ msg }}</h1>
+      <h1><a href="/">{{ msg }}</a></h1>
       <p>Monte seu telescópio e explore o universo.</p>
     </div>
+    <Acoes class="acoes"/>
   </div>
 </template>
 
 <script>
+import Acoes from "./Acoes.vue";
 export default {
   name: 'Cabecalho',
   props: {
     msg: String
+  },
+  components: {
+    Acoes
   }
 }
 </script>
@@ -21,6 +26,10 @@ export default {
 
 .cabecalho {
   margin-top: -50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #titulo {
@@ -36,6 +45,10 @@ h1 {
 }
 p {
   font-size: 1.2rem;
+}
+a {
+  text-decoration: none;
+  color: unset;
 }
 
 
@@ -54,6 +67,9 @@ p {
   }
   p {
     font-size: 0.8rem;
+  }
+  .acoes {
+    display: none;
   }
 }
 

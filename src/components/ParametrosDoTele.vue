@@ -41,7 +41,6 @@
       />
     </div>
 
-    <!-- <div id="botao" type="button" v-on:click="retornaDados">Calcular</div> -->
     <button id="botao" type= "button" v-on:click="retornaDados">Calcular</button>
   </form>
 </template>
@@ -62,7 +61,23 @@ export default {
   },
   emits: ["vai"],
   methods: {
+    validacao: function () {
+      if (this.diam == "") {
+        alert("Digite o diâmetro da lente objetiva");
+        return false;
+      } else if (this.disFocObj == "") {
+        alert("Digite a distância focal da lente objetiva");
+        return false;
+      } else if (this.disFocOcu == "") {
+        alert("Digite a distância focal da lente ocular");
+        return false;
+      }
+    },
     retornaDados: function () {
+      if (this.validacao() ==false) {
+        return;
+      }
+
       this.diam = parseInt(
         String(this.diam).toLowerCase().replace("mm", "").trim()
       );
