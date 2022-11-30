@@ -4,6 +4,7 @@ import {
 } from 'vue-router'
 
 import Home from "../views/Home"
+import Blog from "../views/conteudo/Blog"
 import Projetos from "../views/conteudo/Projetos"
 import Comunidade from "../views/conteudo/Comunidade"
 import Ajuda from "../views/conteudo/Ajuda"
@@ -13,6 +14,11 @@ const routes = [{
         path: '/',
         name: 'Home',
         component: Home
+    },
+    {
+        path: '/blog',
+        name: 'Blog',
+        component: Blog
     },
     {
         path: '/projetos',

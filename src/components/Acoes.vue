@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-link to="/blog"><button type="button">Blog</button></router-link>
         <router-link to="/projetos"><button type="button">Projetos</button></router-link>
         <router-link to="/comunidade"><button type="button">Comunidade</button></router-link>
         <router-link to="/ajuda"><button type="button">Ajuda</button></router-link>
