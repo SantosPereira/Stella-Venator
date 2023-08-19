@@ -4,19 +4,19 @@
       <h1><a href="/">{{ msg }}</a></h1>
       <p>Monte seu telescópio e explore o universo.</p>
     </div>
-    <Acoes class="acoes"/>
+    <!-- <Acoes class="acoes"/> -->
   </div>
 </template>
 
 <script>
-import Acoes from "./Acoes.vue";
+// import Acoes from "./Acoes.vue";
 export default {
   name: 'Cabecalho',
   props: {
     msg: String
   },
   components: {
-    Acoes
+    // Acoes
   }
 }
 </script>
