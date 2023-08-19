@@ -40,7 +40,7 @@
         </tr>
       </tbody>
     </table>
-    <a href="/">Como isso foi calculado?</a>
+    <router-link to="/blog/post/calculo">Como isso foi calculado?</router-link>
   </div>
 </template>
 

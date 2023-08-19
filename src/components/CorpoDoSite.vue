@@ -1,14 +1,20 @@
 <template>
     <div>
-
+        <section>
+            <h2>Sobre</h2>
+            <p>Stella Venator é um projeto open-source de divulgação científica.</p>
+            <p>O objetivo dessa página é fornecer ferramentas para facilitar os cálculos ópticos</p>
+            <p>necessários para a montagem de um telescópio refrator caseiro barato e simples.</p>
+        </section>
+        <section>
+            <h2>Como usar</h2>
+            <p>Para usar o Stella Venator, basta preencher os campos com os dados do seu telescópio.</p>
+            <br/>
+            <br/>
+            <br/>
+            <p>Entre na nossa comunidade no discord</p><a href="https://discord.gg/wwpf2jUK">https://discord.gg/wwpf2jUK</a>
+        </section>
     </div>
-
-    <section>
-        <h2>Sobre</h2>
-        <p>Stella Venator é um projeto open-source de divulgação científica.</p>
-        <p>O objetivo dessa página é fornecer ferramentas para facilitar os cálculos ópticos</p>
-        <p>necessários para a montagem de um telescópio refrator caseiro barato e simples.</p>
-    </section>
 </template>
 
 <script>

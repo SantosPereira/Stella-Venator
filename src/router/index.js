@@ -9,6 +9,7 @@ import Projetos from "../views/conteudo/Projetos"
 import Comunidade from "../views/conteudo/Comunidade"
 import Ajuda from "../views/conteudo/Ajuda"
 import Doe from "../views/conteudo/Doe"
+import ComoFoiCalculado from "../views/calculo/ComoFoiCalculado"
 
 const routes = [{
         path: '/',
@@ -18,7 +19,15 @@ const routes = [{
     {
         path: '/blog',
         name: 'Blog',
-        component: Blog
+        component: Blog,
+        children: [{
+                path: 'calculo',
+                name: 'ComoFoiCalculado',
+                component: ComoFoiCalculado
+                // component: () =>
+                //     import ('../views/calculo/ComoFoiCalculado.vue')
+
+        }]
     },
     {
         path: '/projetos',
@@ -39,6 +48,11 @@ const routes = [{
         path: '/doe',
         name: 'Doe',
         component: Doe
+    },
+    {
+        path: '/blog/post/calculo',
+        name: 'ComoFoiCalculado',
+        component: ComoFoiCalculado
     },
 ];
 
